@@ -276,7 +276,7 @@ class TftpPacketDAT(TftpPacket):
         self.buffer = struct.pack(fmt,
                                   self.opcode,
                                   self.blocknumber,
-                                  self.data)
+                                  self.data.encode('utf-8'))
         return self
 
     def decode(self):
